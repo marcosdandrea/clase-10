@@ -1,0 +1,10 @@
+td {
+    vertical-align: middle !important;
+}
+
+.tableContainer {
+    max-height: 70%;
+    width: 80%;
+    overflow-y: scroll;
+
+}
