@@ -10,6 +10,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
   </head>
   <body>
@@ -35,12 +36,16 @@
               <label for="formFile" class="form-label">Imagen</label>
               <input class="form-control" type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
             </div>
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-end btnContainer">
               <input type="submit" class="btn btn-primary" value="Enviar">
+              <input type="button" class="btn btn-warning" id="btnViewProducts" value="Ver todos los productos">
             </div>
           </form>
         </div>
       </div>
     </div>
   </body>
+  <script>
+    document.querySelector("#btnViewProducts").addEventListener("click", ()=>{location.replace("\\api\\productos")})
+  </script>
 </html>

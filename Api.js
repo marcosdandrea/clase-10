@@ -29,13 +29,13 @@ module.exports = class Api {
             contenedor.getAll()
                 .then((products) => {
                     if (products.length == 0)
-                        res.status(404).send(JSON.stringify({ error: 'productos no encontrados' }))
+                        res.status(404).sendFile(path.join(__dirname, 'public/noProducts.html'))
                     else
-                        res.send(products)
+                        res.render("table", {products}) 
                 })
                 .catch((err) => {
                     console.log(err)
-                    res.status(404).send(JSON.stringify({ error: 'productos no encontrados' }))
+                    res.status(404).sendFile(path.join(__dirname, 'public/noProducts.html'))
                 })
         })
 

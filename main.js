@@ -6,11 +6,10 @@ const app = express();
 const PORT = 8080;
 
 //FOR TEST PURPOSE ONLY!
-const mode = 0 // 0 = handlebars ; 1 = pug ; 2 = ejs
+const mode = 2 // 0 = handlebars ; 1 = pug ; 2 = ejs
 
 if (mode == 0) {
     console.log ("Running Handlebars engine")
-
     app.engine(
         "hbs",
         engine({
@@ -30,19 +29,8 @@ if (mode == 0) {
     app.set("views", "./views");
 } else if (mode == 1) {
     console.log ("Running Pug engine")
-
-    app.set("view engine", "pug");
-    
+    app.set("view engine", "pug");    
     app.set("views", "./views");
-    
-    app.get("/hello", (req, res, next) => {
-        const products = [
-            {title: "Pepsi", price: 100},
-            {title: "Coca", price: 100},
-            {title: "Fanta", price: 100},
-        ]
-        res.render("table", {products})
-    })
 }else{
     console.log ("Running Ejs engine")
     app.set("view engine", "ejs");

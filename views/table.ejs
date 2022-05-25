@@ -37,6 +37,7 @@
             <% }); %>
           </tbody>
         </table>
+        <button class="btn btn-secondary" id="btnBack">Volver</button>
       </div>
     </div>
   </body>
@@ -52,3 +53,6 @@
     overflow-y: scroll;
   }
 </style>
+<script>
+  document.querySelector("#btnBack").addEventListener("click", () => {location.replace("\\") })
+</script>

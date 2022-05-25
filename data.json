@@ -1,1 +1,14 @@
-[{"title":"Coca Cola","price":55,"image":"../images/outline_settings_power_black_24dp.png","id":"be5cd3f5-4f64-49d9-ae04-90a58c5250e9"},{"title":"Coca Cola","price":55,"image":"../images/outline_settings_power_black_24dp.png","id":"dccae2d1-b23d-42b7-a33b-f7054aef25c8"},{"title":"Coca Cola","price":55,"image":"../images/outline_settings_power_black_24dp.png","id":"04b43779-ff9c-4a2c-804d-46977f2882e2"},{"title":"TEst","price":123,"image":"../images/sprite-1-5-l.jpg","id":"7d588093-10f6-4be9-a48b-2de3b534fecc"}]
+[
+    {
+        "title": "Sprite Zero",
+        "price": 152.6,
+        "image": "../images/sprite-1-5-l.jpg",
+        "id": "8c4ee5ab-d969-455f-9a38-07b91eae00fb"
+    },
+    {
+        "title": "Coca Cola",
+        "price": 148.5,
+        "image": "../images/istockphoto-499208007-612x612.jpg",
+        "id": "f2db60e5-c3b1-4dfd-8290-6aaea9a0f188"
+    }
+]

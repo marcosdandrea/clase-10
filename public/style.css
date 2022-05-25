@@ -7,3 +7,7 @@ td {
     width: 80vw;
     overflow-y: scroll;
 }
+
+.btnContainer{
+    column-gap: 1rem;
+}
