@@ -1,7 +1,26 @@
 html
-  head 
-    title="Tabla de productos"
+  head
+    title Tabla de productos 
+    
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+    integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')   
+    style    
+      include style.css
   body
-    ul
-      each val in products
-        li=val.title
+    div(class="container-fluid d-flex vh-100 vw-100 justify-content-center align-items-center")
+      div(class="tableContainer")
+        table(class="table")
+          thead
+            tr
+            th(scope="col") #
+            th(scope="col") Nombre del Producto
+            th(scope="col") Precio
+            th(scope="col") Imagen
+          tbody
+            each product, index in products
+              tr
+                td(scope="row")= index+1
+                td(scope="row")= product.title
+                td(scope="row")= product.price
+                td
+                  image(src=product.image style="height: 4rem;")

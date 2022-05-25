@@ -46,7 +46,7 @@ module.exports = class Api {
                     if (products.length == 0)
                         res.status(404).send(JSON.stringify({ error: 'producto no encontrado' }))
                     else
-                        res.send(products)
+                        res.render("table", {products}) 
                 })
                 .catch((err) => {
                     console.log(err)
@@ -58,19 +58,6 @@ module.exports = class Api {
         //add new producto and return new id
         this.apiRouter.post("/", uploader.single("image"), (req, res) => {
             const { file } = req;
-
-
-            /*
-            // Si descomento este bloque, pug funciona correctamente
-
-            const products = [
-                {title: "Pepsi", price: 100},
-                {title: "Coca", price: 100},
-                {title: "Fanta", price: 100},
-            ]
-            console.log (products)
-            res.render("table", {products})
-            */
 
             const title = req.query.title || req.body.title
             const price = parseFloat(req.query.price) || parseFloat(req.body.price)
@@ -87,17 +74,8 @@ module.exports = class Api {
             this.contenedor.save(newProduct)
                 .then(id => {
                     this.contenedor.getAll()
-                        .then((sproducts) => {
-                            /*
-                            // si descomento este bloque, pug no funciona y reinicia el servidor
-                            const products = [
-                                {title: "Pepsi", price: 100},
-                                {title: "Coca", price: 100},
-                                {title: "Fanta", price: 100},
-                            ]
-                            console.log (products)
-                            res.render("table", {products})
-                            */
+                        .then((products) => {
+                            res.render("table", {products})                            
                         })
                 })
                 .catch((err) => {
